@@ -10,13 +10,11 @@ $factory->define(UserMessage::class, function (Faker $faker) {
     $txt = $faker->realText(rand(100, 500));
     $createdAt = $faker->dateTimeBetween('-3 months','-2 months');
     $status = Arr::random(['canceled', 'approved', 'pending']);
-    $imageRand = rand(1,3);
-    $imageRand == 3 ? $imageRand = 'Cute-kittens-12929201-1600-1200.jpg' : $imageRand = null;
 
     $data = [
         'user_name'     => $faker->name,
         'user_email'    => $faker->unique()->safeEmail,
-        'image_path'    => $imageRand,
+        'image_path'    => null,
         'message_text'  => $txt,
         'status'        => $status,
         'is_edited'     => rand(0, 1),
