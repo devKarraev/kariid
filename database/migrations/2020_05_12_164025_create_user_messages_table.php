@@ -20,7 +20,7 @@ class CreateUserMessagesTable extends Migration
             $table->string('user_email');
             $table->string('image_path')->nullable();
             $table->text('message_text');
-            $table->text('status')->default('pending');
+            $table->string('status')->default('pending');
             $table->boolean('is_edited')->default(false);
         });
     }
